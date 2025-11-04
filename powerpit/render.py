@@ -4,7 +4,16 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-import imageio.v3 as imageio
+try:
+    import imageio.v2 as imageio
+except ImportError:  # pragma: no cover - fallback for older imageio
+    try:
+        import imageio  # type: ignore[no-redef]
+    except ImportError as exc:  # pragma: no cover - missing runtime dependency
+        raise RuntimeError(
+            "Le module 'imageio' est requis pour le rendu vidéo. "
+            "Installez les dépendances avec 'pip install -e .[dev]' ou 'pip install -r requirements.txt'."
+        ) from exc
 import numpy as np
 
 from .scene import SceneConfig

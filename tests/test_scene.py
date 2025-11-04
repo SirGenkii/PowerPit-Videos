@@ -1,6 +1,12 @@
+from __future__ import annotations
+
 from pathlib import Path
+import sys
 
 import pytest
+
+if __package__ is None or __package__ == "":  # Direct execution support
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from powerpit.scene import SceneConfigError, load_scene_config
 
@@ -31,3 +37,7 @@ arena:
 
     with pytest.raises(SceneConfigError):
         load_scene_config(yaml_file)
+
+
+if __name__ == "__main__":  # pragma: no cover - convenience execution
+    raise SystemExit(pytest.main([__file__]))
