@@ -1,11 +1,37 @@
 name: "Circle Basic"
-duration_seconds: 10
+duration_seconds: 12
 frame_rate: 30
 arena:
   type: "circle"
   radius: 8.0
+  bumpers:
+    - position: [0.0, 0.0]
+      radius: 1.2
+      restitution: 1.5
+    - position: [0.0, 3.5]
+      radius: 0.8
+    - position: [0.0, -3.5]
+      radius: 0.8
 teams:
   - name: "Team A"
     color: "#FF5BE1"
+    players:
+      - name: "A1"
+        spawn: [-3.5, -1.75]
+        velocity: [4.2, 2.2]
+      - name: "A2"
+        spawn: [-3.5, 1.75]
+        velocity: [4.0, -2.0]
   - name: "Team B"
     color: "#5BD8FF"
+    players:
+      - name: "B1"
+        spawn: [3.5, -1.75]
+        velocity: [-4.0, 2.0]
+      - name: "B2"
+        spawn: [3.5, 1.75]
+        velocity: [-4.2, -2.2]
+ball_radius: 0.45
+ball_mass: 1.0
+friction: 0.995
+restitution: 0.98

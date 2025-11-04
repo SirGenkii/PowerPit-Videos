@@ -1,14 +1,14 @@
 """Power Pit package initializer."""
 
-from .scene import SceneConfig, load_scene_config
 from .rng import build_rng
+from .scene import SceneConfig, load_scene_config
 
-__all__ = ["SceneConfig", "load_scene_config", "render_blank_clip", "build_rng"]
+__all__ = ["SceneConfig", "load_scene_config", "render_scene", "build_rng"]
 
 
-def render_blank_clip(*args, **kwargs):  # type: ignore[override]
+def render_scene(*args, **kwargs):  # type: ignore[override]
     """Lazy import helper to avoid hard dependency during tests."""
 
-    from .render import render_blank_clip as _render_blank_clip
+    from .render import render_scene as _render_scene
 
-    return _render_blank_clip(*args, **kwargs)
+    return _render_scene(*args, **kwargs)

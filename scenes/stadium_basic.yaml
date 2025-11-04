@@ -1,0 +1,41 @@
+name: "Stadium Dash"
+duration_seconds: 12
+frame_rate: 30
+arena:
+  type: "stadium"
+  width: 14.0
+  height: 10.0
+  corner_radius: 2.0
+  bumpers:
+    - position: [0.0, 0.0]
+      radius: 0.9
+      restitution: 1.4
+    - position: [0.0, 3.0]
+      radius: 0.7
+      restitution: 1.3
+    - position: [0.0, -3.0]
+      radius: 0.7
+      restitution: 1.3
+teams:
+  - name: "Team A"
+    color: "#FFC857"
+    players:
+      - name: "Alpha"
+        spawn: [-4.5, -1.5]
+        velocity: [3.8, 1.8]
+      - name: "Beta"
+        spawn: [-4.5, 1.5]
+        velocity: [3.6, -1.5]
+  - name: "Team B"
+    color: "#2E86FF"
+    players:
+      - name: "Gamma"
+        spawn: [4.5, -1.5]
+        velocity: [-3.9, 1.6]
+      - name: "Delta"
+        spawn: [4.5, 1.5]
+        velocity: [-3.7, -1.7]
+ball_radius: 0.45
+ball_mass: 1.0
+friction: 0.995
+restitution: 0.98
