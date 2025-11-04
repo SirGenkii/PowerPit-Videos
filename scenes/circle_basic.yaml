@@ -1,0 +1,11 @@
+name: "Circle Basic"
+duration_seconds: 10
+frame_rate: 30
+arena:
+  type: "circle"
+  radius: 8.0
+teams:
+  - name: "Team A"
+    color: "#FF5BE1"
+  - name: "Team B"
+    color: "#5BD8FF"
